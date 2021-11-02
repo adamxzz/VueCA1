@@ -17,7 +17,6 @@
           </h1>
         <br/>
         <b-row>
-            <SearchCountries/>
         </b-row>
       </b-container>
     </div>
@@ -25,12 +24,10 @@
 </template>
 
 <script>
-import SearchCountries from "@/components/SearchCountries";
 
 export default {
   name: "home",
   components: {
-    SearchCountries,
   },
 };
 </script>

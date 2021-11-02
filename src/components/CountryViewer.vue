@@ -2,19 +2,21 @@
   <div>
     <b-container>
       <b-row>
-        <b-col cols="6">
+        <b-col class="">
           <b-card-group>
             <b-card class="center">
-              <img :src="country.flag">
+              <img :src="country.flags.png">
               <p>
-                <b>Flag: </b>{{ country.flag }}
               </p>
               <h4>
                 <b>Name: </b>
-                <router-link :to="{name: 'country',params: { country: country.name.official },}">{{ country.name.common }}</router-link>
+                <router-link :to="{name: 'singlecountries',params: { country: country.name.official },}">{{ country.name.common }}</router-link>
               </h4>
               <p>
                 <b>Capital: </b>{{ country.capital[0] }}
+              </p>
+              <p>
+                <b>Population: </b>{{ country.population }}
               </p>
               <hr />
             </b-card>

@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Countries from './pages/Countries'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import SingleCountries from './pages/SingleCountries'
 
 
 Vue.use(Router)
@@ -31,6 +32,11 @@ export default new Router ({
             path: '/contact',
             name: 'contact',
             component: Contact
+        },
+        {
+            path: '/singlecountries/:country',
+            name: 'singlecountries',
+            component: SingleCountries
         },
     ]
 })
