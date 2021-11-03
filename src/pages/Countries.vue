@@ -1,17 +1,24 @@
 <template>
   <div>
     <h1 class="title">All Countries</h1>
-        <CountryViewer
-          v-for="country in countries"
-          :key="country.ccn3"
-          :country="country"
-        />
+    <div class="search-box center">
+      <input type="text" v-model="term" v-on:keyup.enter="searchCountries()" />
+      <b-button class="float-end" variant="outline-success" @click="searchCountries()"
+        >Search</b-button
+      >
+    </div>
+    <CountryViewer
+      v-for="country in countries"
+      :key="country.ccn3"
+      :country="country"
+    />
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import CountryViewer from "@/components/CountryViewer";
+const REST_URL = "https://restcountries.com/v3.1/";
 
 export default {
   name: "AllCountries",
@@ -32,6 +39,28 @@ export default {
       })
       .catch((error) => console.log(error));
   },
+  methods: {
+    searchCountries() {
+      if (!this.term) {
+        alert("Please enter a search term");
+        this.$byToast.toast("Please enter a search term", {
+          title: "Warning",
+          variant: "danger",
+          toaster: "b-toaster-top-center",
+          autoHideDelay: 5000,
+          solid: true,
+        });
+        return;
+      }
+      axios
+        .get(`${REST_URL}/name/${this.term}`)
+        .then((response) => {
+          console.log(response.data);
+          this.countries = response.data;
+        })
+        .catch((error) => console.log(error));
+    },
+  },
 };
 </script>
 
@@ -39,5 +68,8 @@ export default {
 .title {
   text-align: center;
   color: #74c69d;
+}
+.center{
+  align-content: center;
 }
 </style>
