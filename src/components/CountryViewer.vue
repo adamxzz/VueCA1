@@ -1,30 +1,27 @@
 <template>
+<!-- this component shows all the countries in the countries page and links country viewer to search counrtries -->
   <div>
-    
-    <b-container>
-      <b-row>
-        <b-col class="">
-          <b-card-group>
-            <b-card class="center">
-              <img :src="country.flags.png">
-              <p>
-              </p>
-              <h4>
-                <b>Name: </b>
-                <router-link :to="{name: 'singlecountries',params: { country: country.name.official },}">{{ country.name.common }}</router-link>
-              </h4>
-              <p>
-                <b>Capital: </b>{{ country.capital[0] }}
-              </p>
-              <p>
-                <b>Population: </b>{{ country.population }}
-              </p>
-              <hr />
-            </b-card>
-          </b-card-group>
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-card-group>
+      <b-card class="center">
+        <img :src="country.flags.png" />
+        <p></p>
+        <h4>
+          <b>Name: </b>
+          <router-link
+            :to="{
+              name: 'singlecountries',
+              params: { country: country.name.official },
+            }"
+            >{{ country.name.common }}</router-link
+          >
+        </h4>
+        <p><b>Capital: </b>{{ country.capital[0] }}</p>
+        <p><b>Region: </b>{{ country.region }}</p>
+        <p><b>Population: </b>{{ country.population }}</p>
+
+        <hr />
+      </b-card>
+    </b-card-group>
   </div>
 </template>
 
@@ -38,7 +35,7 @@ export default {
 </script>
 
 <style>
-.center{
+.center {
   text-align: center;
 }
 </style>

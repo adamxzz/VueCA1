@@ -3,15 +3,20 @@
     <h1 class="title">All Countries</h1>
     <div class="search-box center">
       <input type="text" v-model="term" v-on:keyup.enter="searchCountries()" />
-      <b-button class="float-end" variant="outline-success" @click="searchCountries()"
+      <b-button
+        class="float-end"
+        variant="outline-success"
+        @click="searchCountries()"
         >Search</b-button
       >
     </div>
-    <CountryViewer
-      v-for="country in countries"
-      :key="country.ccn3"
-      :country="country"
-    />
+    <div class="center">
+      <CountryViewer
+        v-for="country in countries"
+        :key="country.ccn3"
+        :country="country"
+      />
+    </div>
   </div>
 </template>
 
@@ -42,12 +47,12 @@ export default {
   methods: {
     searchCountries() {
       if (!this.term) {
-        alert("Please enter a search term");
-        this.$byToast.toast("Please enter a search term", {
+        alert("Please enter a country name");
+        this.$byToast.toast("Please enter a country name", {
           title: "Warning",
           variant: "danger",
           toaster: "b-toaster-top-center",
-          autoHideDelay: 5000,
+          autoHideDelay: 6900,
           solid: true,
         });
         return;
@@ -69,7 +74,7 @@ export default {
   text-align: center;
   color: #74c69d;
 }
-.center{
+.center {
   align-content: center;
 }
 </style>
