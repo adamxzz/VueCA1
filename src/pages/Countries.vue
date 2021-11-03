@@ -10,13 +10,14 @@
         >Search</b-button
       >
     </div>
-    <div class="center">
+    
+      <b-card-group columns>
       <CountryViewer
         v-for="country in countries"
         :key="country.ccn3"
         :country="country"
       />
-    </div>
+      </b-card-group>
   </div>
 </template>
 

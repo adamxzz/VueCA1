@@ -1,7 +1,5 @@
 <template>
 <!-- this component shows all the countries in the countries page and links country viewer to search counrtries -->
-  <div>
-    <b-card-group>
       <b-card class="center">
         <img :src="country.flags.png" />
         <p></p>
@@ -18,11 +16,8 @@
         <p><b>Capital: </b>{{ country.capital[0] }}</p>
         <p><b>Region: </b>{{ country.region }}</p>
         <p><b>Population: </b>{{ country.population }}</p>
-
         <hr />
       </b-card>
-    </b-card-group>
-  </div>
 </template>
 
 <script>
