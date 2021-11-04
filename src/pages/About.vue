@@ -1,4 +1,5 @@
 <template>
+<!-- about page for about content -->
   <div class="about">
     <b-container>
       <b-row>

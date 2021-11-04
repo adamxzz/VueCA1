@@ -1,4 +1,5 @@
 <template>
+<!-- about page for content to do with contacting-->
     <div class="contact">
      <b-container>
           <b-row>

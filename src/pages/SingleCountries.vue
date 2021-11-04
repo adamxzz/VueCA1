@@ -13,14 +13,13 @@
       <b-row>
         <b-col>
           <h3>{{ $route.params.country }}</h3>
-          <h4>Country Offical Name: {{ country.name.offical }}</h4>
           <h4>Region: {{ country.region }}</h4>
-          <h4>SubRegion: {{ country.subregion }}</h4>
+          <h4>Sub-Region: {{ country.subregion }}</h4>
           <h4>Population: {{ country.population }}</h4>
           <h4>Capital City: {{ (country.capital).join(', ') }}</h4>
           <h4>Languages: {{Object.values(country.languages).join(', ')}}</h4> <!-- join gets rid of brackets -->
-          <h4>Currency: {{ country.currencies[Object.keys(country.currencies)[0]].name}}
-            {{ country.currencies[Object.keys(country.currencies)[0]].symbol}}
+          <h4>Currency: {{ country.currencies[Object.keys(country.currencies)[0]].name}} Symbol: {{ country.currencies[Object.keys(country.currencies)[0]].symbol}}
+            
           </h4>
         </b-col>
       </b-row>
